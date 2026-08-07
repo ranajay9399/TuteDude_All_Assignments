@@ -30,8 +30,18 @@ Compress the test_dir directory into a file named test_dir.zip using zip.
 Unzip test_dir.zip into a new directory named unzipped_dir.
 =============
 Answer ->
-  #tar -cvf test_dir 
-  #tar -xvf test_dir.zip
+  #zip -r test_dir.zip test_dir 
+  #unzip test_dir.zip -d /home/ubuntu/unzipped_dir
+
+One thing to remember that by default in Ubuntu destro, zip and unzip are not available in the system, we need to install those by using below commands - 
+  #sudo apt install zip
+  #sudo apt install unzip
+
+Also there are two commands which can be used for the similar purpose, those are tar and untar. 
+Example -> tar -cvf <archive file name>.tar.gz <target folder/file name>
+           tar -xvf <archive file name>.tar.gz
+
+Here -c stands for compress and -x stands for extract. 
 =================================================================================
 5. Downloading Files
 Use wget to download a file from a URL (e.g., https://example.com/sample.txt).
@@ -45,7 +55,10 @@ Create a file named secure.txt and change its permissions to read-only for every
 =============
 Answer ->
   #touch secure.txt
-  #chmod +R secure.txt
+  #chmod 444 secure.txt 
+
+Here we have used numeric combination for changing the file permission 
+4=Read, 2=Write, 1=Executive
 =================================================================================
 7. Working with Environment Variables
 Use export to set a new environment variable called MY_VAR with the value "Hello, Linux!".
@@ -53,4 +66,6 @@ Use export to set a new environment variable called MY_VAR with the value "Hello
 Answer ->
   #export MY_VAR="Hello, Linux!"
 
+Export basically assign some value to a variable or in other words, environment variable. 
+Now if we assign any value to a variable and then call it using echo command and a doller sign infront of the variable, we should see the actually value in the temrinal which was assigned to it. 
 ========================================= THE END OF THE DOCUMENT ========================================
