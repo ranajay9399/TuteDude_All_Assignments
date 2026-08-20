@@ -1,0 +1,122 @@
+Question - 1 : Write a Python Program to prepare a Grade Checker with below details - Take a score as input and print the grade based on the following: 
+90+ : “A”
+80–89 : “B”
+70–79 : “C”
+60–69 : “D”
+Below 60 : “F”
+Use a basic if / else statement to determine the grade.
+
+Source Code - 
+=====================================================================================================================
+Score = int(input("Please enter your score to find out your Grade\n"))
+if Score >=90:
+    print("Congratulations! You have got Grade - A")
+elif Score >=80:
+    print("Congratulations! You have got Grade - B")
+elif Score >=70:
+    print("Congratulations! You have got Grade - C")
+elif Score >=60:
+    print("Congratulations! You have got Grade - D")
+else:
+    print("You have got Grade - 'F', Try again and do better! All the very best!")
+
+
+=====================================================================================================================
+Question - 2. Student Grades
+Create a dictionary where the keys are student names and the values are their grades. Allow the user to:
+Add a new student and grade.
+Update an existing student's grade.
+Print all student grades.
+Use a dictionary and basic operations with if / else.
+
+Source Code - 
+
+#Create the dictionary with initial data
+student_grades = {"Anok":"B", "Raja":"A", "Rocky":"C", "David":"D"}
+
+# Print the menu choices for the user
+print("--- Student Grade System ---")
+print("1. Add a new student")
+print("2. Update an existing student")
+print("3. Print all student grades")
+print("----------------------------")
+
+#Get the user's choice
+choice = input("Enter your choice (1, 2, or 3): ")
+
+#Choice 1: Add a new student
+if choice == "1":
+    name = input("Enter student name: ")
+    grade = input("Enter student grade: ")
+    
+    # Save the new student into the dictionary
+    student_grades[name] = grade
+    print("Student added successfully!")
+    
+    # Print the updated dictionary to show the result
+    print("Updated grades:", student_grades)
+
+#Choice 2: Update an existing student
+elif choice == "2":
+    name = input("Enter student name to update: ")
+    grade = input("Enter the new grade: ")
+    
+    # Update the existing student's grade
+    student_grades[name] = grade
+    print("Grade updated successfully!")
+    
+    # Print the updated dictionary to show the result
+    print("Updated grades:", student_grades)
+
+#Choice 3: Print all student grades
+elif choice == "3":
+    print("Current Student Grades:")
+    print(student_grades)
+
+#Invalid Input Handling
+else:
+    print("Invalid choice! Please run the program again and type 1, 2, or 3.")
+
+
+=======================================================================================================================================
+Question - 3. Write to a File - 
+Write a program to create a text file and write some content to it, using file functions like open() and write().
+
+Source Code - 
+
+#Creating a file (if not present already) in Write mode
+my_file=open("Student_file.txt", 'w')
+
+#Wrtie some contents to the file
+my_file.write("Student name is Ajay\n")
+my_file.write("Student nane is Raj\n")
+my_file.write("Student name is Jay\n")
+my_file.write("Student name is Karan\n")
+
+#Close the file to save the changes safely
+my_file.close()
+
+#printing the confirmation message
+print("File has been created and given contents have been updated into the file successfully")
+
+=======================================================================================================================================
+
+Question - 4. Read from a File
+Open the file in read mode and use file.read() to read and display its content.
+
+Source Code - 
+
+
+#Open the "Student_file.txt" file in read mode
+my_file=open("Student_file.txt", 'r')
+
+#Read all the content of the file and store the content of the file into a variable
+file_content= my_file.read()
+
+#Close the file to free up system memory
+my_file.close()
+
+#print the contents of the file by calling the variable
+print(file_content)
+
+==================================================END OF THE FILE===========================================================
